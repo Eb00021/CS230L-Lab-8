@@ -2,26 +2,25 @@ import React from 'react';
 
 function Card() {
   return (
-    <div className="card-deck">
-      <div className="card">
-        <img src="card-image-1.jpg" className="card-img-top" alt="Card 1" />
+    <div>
+      <div className="card text-white bg-primary mb-3" style={{ maxWidth: '18rem' }}>
         <div className="card-body">
-          <h5 className="card-title">Card 1</h5>
-          <p className="card-text">Content for Card 1.</p>
+          <h5 className="card-title">Card 01</h5>
+          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
-      <div className="card">
-        <img src="card-image-2.jpg" className="card-img-top" alt="Card 2" />
+      
+      <div className="card text-white bg-danger mb-3" style={{ maxWidth: '18rem' }}>
         <div className="card-body">
-          <h5 className="card-title">Card 2</h5>
-          <p className="card-text">Content for Card 2.</p>
+          <h5 className="card-title">Card 02</h5>
+          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
-      <div className="card">
-        <img src="card-image-3.jpg" className="card-img-top" alt="Card 3" />
+
+      <div className="card text-white bg-success mb-3" style={{ maxWidth: '18rem' }}>
         <div className="card-body">
-          <h5 className="card-title">Card 3</h5>
-          <p className="card-text">Content for Card 3.</p>
+          <h5 className="card-title">Card 03</h5>
+          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         </div>
       </div>
     </div>
