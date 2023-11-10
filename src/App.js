@@ -25,11 +25,6 @@ function App() {
           <Route path="/card" element={<Card />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-
-        <h1>CS 230L</h1>
-        <h2>Section - 002</h2>
-        <p>WVU ID: 800355267</p>
-        <p>Hi, I am Ethan Boyd</p>
       </BrowserRouter>
     </div>
   );
