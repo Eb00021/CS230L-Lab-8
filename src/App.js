@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from './home.js';
-import Navbar from './navbar.js';
 import Card from './card.js';
 import Contact from './contact.js';
+import { Navbar, Nav } from 'react-bootstrap';
 
 function App() {
   return (
