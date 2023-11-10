@@ -1,23 +1,16 @@
 import React from 'react';
+import { Navbar, Nav } from 'react-bootstrap';
 
 function Navbar() {
   return (
-    <nav class="navbar navbar-dark bg-dark">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-              <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Card</a>
-                <a class="nav-link" href="#">Contact</a>
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-              </div>
-            </div>
-          </div>
-    </nav>
+    <Navbar bg="dark" variant="dark">
+      <Navbar.Brand href="#home">React Bootstrap Navbar</Navbar.Brand>
+      <Nav className="mr-auto">
+        <Nav.Link href='./home.js'>Home</Nav.Link>
+        <Nav.Link href='./contact.js'>Contact</Nav.Link>
+        <Nav.Link href='./card.js'>Card</Nav.Link>
+      </Nav>
+    </Navbar>
   );
 }
 
