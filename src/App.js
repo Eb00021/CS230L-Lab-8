@@ -21,7 +21,6 @@ function App() {
 
   return (
     <>
-      {/* <Navbar /> */}
       <div className="App container">
         <h1>ToDo List</h1>
         <input type="text" placeholder="Enter an item" ref={inputRef} />
