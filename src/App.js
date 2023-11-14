@@ -1,32 +1,47 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Home from './home.js';
-import Card from './card.js';
-import Contact from './contact.js';
-import { Navbar, Nav } from 'react-bootstrap';
+import { useRef, useState } from "react";
+import "./assets/css/style.css";
+import Navbar from "./components/Navbar";
+import bg from "./assets/images/bg.jpg";
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Navbar bg="dark" variant="dark">
-          <Navbar.Brand href="/">CS 230L</Navbar.Brand>
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/card">Card</Nav.Link>
-            <Nav.Link href="/contact">Contact</Nav.Link>
-          </Nav>
-        </Navbar>
+  const [task, setTask] = useState([]);
+  const inputRef = useRef(null);
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/card" element={<Card />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
+  const addItem = (e) => {
+    e.preventDefault();
+    const newItem = inputRef.current.value;
+    if (newItem !== "") {
+      setTask([...task, newItem]);
+    }
+    inputRef.current.value = "";
+  };
+
+  const removeItem = (index) => {
+    const updatedTasks = task.filter((_, i) => i !== index);
+    setTask(updatedTasks);
+  };
+
+  return (
+    <>
+      {/* <Navbar /> */}
+      <div className="App container">
+        <h1>ToDo List</h1>
+        <input type="text" placeholder="Enter an item" ref={inputRef} />
+        <ul>
+          {task.map((task, index) => (
+            <li className="li-item" key={index}>
+              {task}
+              <span className="text-dark" onClick={() => removeItem(index)}>
+                x
+              </span>
+            </li>
+          ))}
+        </ul>
+        <button className="custom-btn" onClick={addItem}>
+          Add
+        </button>
+      </div>
+    </>
   );
 }
 
